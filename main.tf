@@ -7,8 +7,12 @@ terraform {
     }
 }
 
+provider "github" {
+    owner = "infotecho"
+}
+
 resource "github_repository" "public_repo" {
     name        = "www"
-    description = "Company website source"
+    description = "O-Site: InfoTech Ottawa website"
     visibility  = "public"
 }
