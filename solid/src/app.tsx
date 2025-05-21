@@ -1,21 +1,17 @@
-import { createSignal } from "solid-js";
 import "./app.css";
 
 export default function App() {
-  const [count, setCount] = createSignal(0);
-
   return (
     <main>
-      <h1>Hello world!</h1>
-      <button class="increment" onClick={() => setCount(count() + 1)} type="button">
-        Clicks: {count()}
-      </button>
+      <h1>InfoTech Ottawa</h1>
+      <p>Welcome to InfoTech Ottawa!</p>
       <p>
-        Visit{" "}
-        <a href="https://start.solidjs.com" target="_blank">
-          start.solidjs.com
-        </a>{" "}
-        to learn how to build SolidStart apps.
+        Our website is currently under construction. Please pardon our
+        appearance as we build our space.
+      </p>
+      <p>
+        For all business inquiries, please contact{" "}
+        <a href="mailto:caleb@infotechottawa.ca">caleb@infotechottawa.ca</a>
       </p>
     </main>
   );
