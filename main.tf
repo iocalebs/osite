@@ -12,7 +12,7 @@ provider "github" {
 }
 
 resource "github_repository" "public_repo" {
-    name        = "www"
+    name        = "osite"
     description = "O-Site: InfoTech Ottawa website"
     visibility  = "public"
 }
