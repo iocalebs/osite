@@ -1,4 +1,10 @@
+# Netlify
+.netlify
+
+# Node
 node_modules/
+
+# Terraform
 .terraform
 .terraform.lock.hcl
 terraform.tfstate
