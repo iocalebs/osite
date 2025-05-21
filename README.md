@@ -1,3 +1,3 @@
 # O-Site
 
-This is the source repository for [www.infotechottawa.ca]() and [www.infothequeottawa.ca]().
+This is the source repository for [infotechottawa.ca](https://infotechottawa.ca) and [infothequeottawa.ca](https://infothequeottawa.ca).
