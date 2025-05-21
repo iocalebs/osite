@@ -11,7 +11,7 @@ export default function App() {
       </p>
       <p>
         For all business inquiries, please contact{" "}
-        <a href="mailto:caleb@infotechottawa.ca">caleb@infotechottawa.ca</a>
+        <a href="mailto:caleb@infotechottawa.ca">caleb@infotechottawa.ca</a>.
       </p>
     </main>
   );
