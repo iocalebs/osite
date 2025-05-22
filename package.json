@@ -1,6 +1,5 @@
 {
-  "name": "example-bare",
-  "type": "module",
+  "name": "osite",
   "scripts": {
     "dev": "vinxi dev",
     "build": "vinxi build",
