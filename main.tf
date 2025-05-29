@@ -14,5 +14,6 @@ provider "github" {
 resource "github_repository" "public_repo" {
     name        = "osite"
     description = "O-Site: InfoTech Ottawa website"
+    has_issues = true
     visibility  = "public"
 }
