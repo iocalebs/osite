@@ -44,20 +44,10 @@ export default function App() {
   const lang = getLang();
   const handleLangChange = (newLang: Lang) => {
     const newUrl = new URL(window.location.href);
-    switch (newLang) {
-      case "en":
-        newUrl.hostname = config.domain.en;
-        break;
-      // TODO: investigate why removing this cause doesn't cause TypeScript error
-      case "fr":
-        newUrl.hostname = config.domain.fr;
-        break;
-    }
+    newUrl.hostname = config.domain[newLang];
     window.location.href = newUrl.toString();
   };
-
   const { title, intro1, intro2, intro3, email } = dict[lang];
-
   return (
     <MetaProvider>
       <Meta lang={lang} />
