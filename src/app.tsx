@@ -41,7 +41,6 @@ function getLang(): Lang {
 }
 
 export default function App() {
-  // TODO: create issue for handling accept-language
   const lang = getLang();
   const handleLangChange = (newLang: Lang) => {
     const newUrl = new URL(window.location.href);
