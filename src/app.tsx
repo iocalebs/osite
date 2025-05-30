@@ -1,6 +1,10 @@
 import { Meta, MetaProvider, Title } from "@solidjs/meta";
+import { Router } from "@solidjs/router";
+import { Suspense } from "solid-js";
 import { getRequestEvent } from "solid-js/web";
+import { FileRoutes } from "@solidjs/start/router";
 import { LangSelect } from "./components";
+import { I18nProvider } from "./lib";
 import config from "./config";
 import dict from "./dict";
 import "./app.css";
@@ -47,24 +51,28 @@ export default function App() {
     newUrl.hostname = config.domain[newLang];
     window.location.href = newUrl.toString();
   };
-  const { title, intro1, intro2, intro3, email } = dict[lang];
+  const { title } = dict[lang];
   return (
-    <MetaProvider>
-      <Meta lang={lang} />
-      <Title>{title}</Title>
-      <header>
-        <nav class="navbar justify-between px-4 py-2 shadow-sm">
-          <a href="/" class="text-2xl font-bold">
-            <h1>{title}</h1>
-          </a>
-          <LangSelect value={lang} onChange={handleLangChange} />
-        </nav>
-      </header>
-      <main class="prose p-4">
-        <p>{intro1}</p>
-        <p>{intro2}</p>
-        <p>{intro3(<a href={`mailto:${email}`}>{email}</a>)}</p>
-      </main>
-    </MetaProvider>
+    <Router
+      root={(props) => (
+        <I18nProvider value={lang}>
+          <MetaProvider>
+            <Meta lang={lang} />
+            <Title>{title}</Title>
+            <header>
+              <nav class="navbar justify-between px-4 py-2 shadow-sm">
+                <a href="/" class="text-2xl font-bold">
+                  <h1>{title}</h1>
+                </a>
+                <LangSelect value={lang} onChange={handleLangChange} />
+              </nav>
+            </header>
+            <Suspense>{props.children}</Suspense>
+          </MetaProvider>
+        </I18nProvider>
+      )}
+    >
+      <FileRoutes />
+    </Router>
   );
 }
