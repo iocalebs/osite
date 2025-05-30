@@ -1,7 +1,6 @@
 import { createContext, useContext } from "solid-js";
-import dicts from "~/dict";
-
-export type Lang = "en" | "fr";
+import { type Lang } from "./i18n-types";
+import { dicts } from "./dict";
 
 const I18nContext = createContext<Lang>();
 

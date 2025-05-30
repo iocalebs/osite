@@ -1,4 +1,4 @@
-type Lang = "en" | "fr";
+import type { Lang } from "~/i18n";
 
 type Props = {
   value: Lang;

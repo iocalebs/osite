@@ -1,4 +1,4 @@
-import { useI18n } from "~/lib";
+import { useI18n } from "~/i18n";
 
 export default function Home() {
   const {
