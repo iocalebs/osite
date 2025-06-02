@@ -20,7 +20,7 @@ provider "github" {
 resource "github_repository" "osite" {
     name        = "osite"
     description = "O-Site: InfoTech Ottawa website"
-    has_issues = true
+    has_issues = true // hey we've all got issues
     visibility  = "public"
 }
 
