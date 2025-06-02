@@ -1,6 +1,3 @@
-# Netlify
-.netlify
-
 # Node
 node_modules/
 
@@ -9,6 +6,10 @@ node_modules/
 .terraform.lock.hcl
 terraform.tfstate
 terraform.tfstate.backup
+terraform.tfstate.*.backup
+
+# Vercel
+.vercel
 
 # Vinxi
 dist/
