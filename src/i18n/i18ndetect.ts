@@ -1,5 +1,5 @@
-import type { Lang } from "./i18n-types";
 import { getRequestEvent } from "solid-js/web";
+import type { Lang } from "./i18ntypes";
 
 function getHost(): string | undefined {
   if (import.meta.env.SSR) {
