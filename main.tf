@@ -31,3 +31,27 @@ resource "vercel_project" "osite" {
     repo = github_repository.osite.full_name
   }
 }
+
+resource "vercel_project_domain" "apex_en" {
+  project_id = vercel_project.osite.id
+  domain     = "infotechottawa.ca"
+}
+
+resource "vercel_project_domain" "www_en" {
+  project_id = vercel_project.osite.id
+  domain     = "www.infotechottawa.ca"
+  redirect = vercel_project_domain.apex_en.domain
+  redirect_status_code = 308
+}
+
+resource "vercel_project_domain" "apex_fr" {
+  project_id = vercel_project.osite.id
+  domain     = "infothequeottawa.ca"
+}
+
+resource "vercel_project_domain" "www_fr" {
+  project_id = vercel_project.osite.id
+  domain     = "www.infothequeottawa.ca"
+  redirect = vercel_project_domain.apex_fr.domain
+  redirect_status_code = 308
+}
