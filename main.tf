@@ -4,6 +4,10 @@ terraform {
             source  = "integrations/github"
             version = "~> 6.0"
         }
+        sentry ={
+          source = "jianyuan/sentry"
+          version = "~> 0.14"
+        }
         vercel = {
             source  = "vercel/vercel"
             version = "~> 3.0"
@@ -22,6 +26,20 @@ resource "github_repository" "osite" {
     description = "O-Site: Infotech Ottawa website"
     has_issues = true // hey we've all got issues
     visibility  = "public"
+}
+
+resource sentry_project "osite" {
+  name = "O-Site"
+  organization = "infotecho"
+  teams = ["infotecho"]
+  slug = "osite"
+  platform = "javascript-solidstart"
+  client_security = {
+    allowed_domains = [
+      vercel_project_domain.apex_en.domain,
+      vercel_project_domain.apex_fr.domain
+    ]
+  }
 }
 
 resource "vercel_project" "osite" {
