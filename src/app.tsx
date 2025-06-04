@@ -2,7 +2,7 @@ import { Meta, MetaProvider, Title } from "@solidjs/meta";
 import { Router } from "@solidjs/router";
 import { ErrorBoundary, Suspense } from "solid-js";
 import { FileRoutes } from "@solidjs/start/router";
-import { LangSelect } from "./components";
+import { HiddenErrorButton, LangSelect } from "./components";
 import { type Lang, I18nProvider, detectDomainLang, dicts } from "./i18n";
 import "./app.css";
 
@@ -49,6 +49,7 @@ export default function App() {
                 </nav>
               </header>
               <Suspense>{props.children}</Suspense>
+              <HiddenErrorButton />
             </MetaProvider>
           </I18nProvider>
         </ErrorBoundary>
