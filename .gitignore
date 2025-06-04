@@ -12,4 +12,5 @@ terraform.tfstate.*.backup
 .vercel
 
 # Vinxi
+.output
 .vinxi
