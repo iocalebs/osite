@@ -3,16 +3,16 @@ import { Router } from "@solidjs/router";
 import { Suspense } from "solid-js";
 import { FileRoutes } from "@solidjs/start/router";
 import { LangSelect } from "./components";
-import { Lang, I18nProvider, domainLang, dicts } from "./i18n";
+import { type Lang, I18nProvider, detectDomainLang, dicts } from "./i18n";
 import "./app.css";
 
-const domains = {
+const domains: Record<Lang, string> = {
   en: "infotechottawa.ca",
   fr: "infothequeottawa.ca",
 };
 
 export default function App() {
-  const lang = domainLang(domains);
+  const lang = detectDomainLang(domains);
   const handleLangChange = (newLang: Lang) => {
     const newUrl = new URL(window.location.href);
     newUrl.hostname = domains[newLang];

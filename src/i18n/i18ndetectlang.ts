@@ -2,38 +2,41 @@ import { getRequestEvent } from "solid-js/web";
 import type { Lang } from "./i18ntypes";
 
 function getHost(): string | undefined {
-  if (import.meta.env.SSR) {
-    return getRequestEvent()?.request.headers.get("host") || undefined;
-  } else {
+  const requestEvent = getRequestEvent();
+  if (requestEvent) {
+    const host = requestEvent.request.headers.get("host");
+    if (host == null) {
+      console.error(
+        "Language detection failure: unable to determine domain: no Host header in request event",
+      );
+      return undefined;
+    }
+    return host;
+  } else if (typeof window !== "undefined") {
     return window.location.host;
-  }
-}
-
-function getDomain(): string | undefined {
-  const host = getHost();
-  if (!host) {
+  } else {
+    console.error(
+      "Language detection failure: unable to determine domain: no request event or window object",
+    );
     return undefined;
   }
-  const domain = host.split(":")[0];
-  return domain;
 }
 
-type DomainMap = {
-  [k in Lang]: string;
-};
-
-export function domainLang(domains: DomainMap): Lang {
-  const domain = getDomain();
+export function detectDomainLang(domains: Record<Lang, string>): Lang {
+  const domain = getHost()?.split(":")[0];
   if (!domain) {
-    // TODO: Log something?
+    console.error(
+      "Language detection failure: unable to determine domain - defaulting to 'en'",
+    );
     return "en";
   }
-  if (domain.endsWith(domains.en)) {
-    return "en";
-  } else if (domain.endsWith(domains.fr)) {
-    return "fr";
-  } else {
-    // TODO: Log something?
-    return "en";
+  for (const [lang, langDomain] of Object.entries(domains)) {
+    if (domain.endsWith(langDomain)) {
+      return lang as Lang;
+    }
   }
+  console.error(
+    `Language detection failure: unrecognized domain ${domain} - defaulting to 'en'`,
+  );
+  return "en";
 }
