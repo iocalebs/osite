@@ -1,6 +1,6 @@
 import { Meta, MetaProvider, Title } from "@solidjs/meta";
 import { Router } from "@solidjs/router";
-import { Suspense } from "solid-js";
+import { ErrorBoundary, Suspense } from "solid-js";
 import { FileRoutes } from "@solidjs/start/router";
 import { LangSelect } from "./components";
 import { type Lang, I18nProvider, detectDomainLang, dicts } from "./i18n";
@@ -22,21 +22,36 @@ export default function App() {
   return (
     <Router
       root={(props) => (
-        <I18nProvider value={lang}>
-          <MetaProvider>
-            <Meta lang={lang} />
-            <Title>{title}</Title>
-            <header>
-              <nav class="navbar justify-between px-4 py-2 shadow-sm">
-                <a href="/" class="text-2xl font-bold">
-                  <h1>{title}</h1>
-                </a>
-                <LangSelect value={lang} onChange={handleLangChange} />
-              </nav>
-            </header>
-            <Suspense>{props.children}</Suspense>
-          </MetaProvider>
-        </I18nProvider>
+        <ErrorBoundary
+          fallback={(err) => {
+            console.error("Error caught at root boundary:", err);
+            const { unexpectedError, email, meanwhileContact } = dicts[lang];
+            return (
+              <main class="prose p-4">
+                <p>{unexpectedError}</p>
+                <p>
+                  {meanwhileContact(<a href={`mailto:${email}`}>{email}</a>)}
+                </p>
+              </main>
+            );
+          }}
+        >
+          <I18nProvider value={lang}>
+            <MetaProvider>
+              <Meta lang={lang} />
+              <Title>{title}</Title>
+              <header>
+                <nav class="navbar justify-between px-4 py-2 shadow-sm">
+                  <a href="/" class="text-2xl font-bold">
+                    <h1>{title}</h1>
+                  </a>
+                  <LangSelect value={lang} onChange={handleLangChange} />
+                </nav>
+              </header>
+              <Suspense>{props.children}</Suspense>
+            </MetaProvider>
+          </I18nProvider>
+        </ErrorBoundary>
       )}
     >
       <FileRoutes />

@@ -14,4 +14,12 @@ export default {
     </>
   ),
   email: "caleb@infothequeottawa.ca",
+  unexpectedError:
+    "Une erreur inattendue s'est produite. L'administrateur du site a été informé. Nous nous engageons à résoudre le problème aussitôt que possible.",
+  meanwhileContact: (mailto: JSXElement) => (
+    <>
+      En attendant, veuillez contacter {mailto} pour toute demande liée à nos
+      services.
+    </>
+  ),
 } satisfies typeof en;

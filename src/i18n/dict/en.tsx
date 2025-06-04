@@ -10,4 +10,9 @@ export default {
     <>For all business inquiries, please contact us at {mailto}.</>
   ),
   email: "caleb@infotechottawa.ca",
+  unexpectedError:
+    "An unexpected error has occurred. The site administrator has been notified and will be looking into the problem shortly.",
+  meanwhileContact: (mailto: JSXElement) => (
+    <>In the meantime, please contact {mailto} for all business inquiries.</>
+  ),
 };
