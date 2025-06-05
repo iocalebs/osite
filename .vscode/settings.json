@@ -5,5 +5,9 @@
   "editor.rulers": [80],
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "always"
+  },
+  "[terraform]": {
+    "editor.defaultFormatter": "hashicorp.terraform",
+    "editor.formatOnSave": true
   }
 }
