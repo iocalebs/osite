@@ -35,6 +35,9 @@ export function detectDomainLang(domains: Record<Lang, string>): Lang {
       return lang as Lang;
     }
   }
+  if (domain.endsWith(".vercel.app")) {
+    return "en";
+  }
   console.error(
     `Language detection failure: unrecognized domain ${domain} - defaulting to 'en'`,
   );
