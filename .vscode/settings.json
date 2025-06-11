@@ -9,5 +9,9 @@
   "[terraform]": {
     "editor.defaultFormatter": "hashicorp.terraform",
     "editor.formatOnSave": true
-  }
+  },
+  "workbench.editorAssociations": {
+    "*.svg": "default"
+  },
+  "svg.preview.background": "transparent"
 }
