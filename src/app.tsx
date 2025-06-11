@@ -42,9 +42,7 @@ export default function App() {
               <Title>{title}</Title>
               <header>
                 <nav class="navbar justify-between px-4 py-2 shadow-sm">
-                  <a href="/" class="text-2xl font-bold">
-                    <h1>{title}</h1>
-                  </a>
+                  <h1 class="text-2xl font-bold">{title}</h1>
                   <LangSelect value={lang} onChange={handleLangChange} />
                 </nav>
               </header>
