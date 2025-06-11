@@ -16,6 +16,9 @@ export default function App() {
   const handleLangChange = (newLang: Lang) => {
     const newUrl = new URL(window.location.href);
     newUrl.hostname = domains[newLang];
+    if (import.meta.env.DEV) {
+      newUrl.hostname = "localhost." + newUrl.hostname;
+    }
     window.location.href = newUrl.toString();
   };
   const { title } = dicts[lang];
@@ -41,7 +44,7 @@ export default function App() {
               <Meta lang={lang} />
               <Title>{title}</Title>
               <header>
-                <nav class="navbar justify-between px-4 py-2 shadow-sm">
+                <nav class="navbar justify-between pr-2 pl-4 shadow-sm">
                   <h1 class="text-2xl font-bold">{title}</h1>
                   <LangSelect value={lang} onChange={handleLangChange} />
                 </nav>

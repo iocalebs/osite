@@ -8,9 +8,12 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
     server: {
-      // Allows language switching to be tested on localhost by temporarily
-      // mapping prod hosts to loopback in /etc/hosts
-      allowedHosts: ["infotechottawa.ca", "infothequeottawa.ca"],
+      // To test language switching locally
+      // These "subdomains" are mapped to the loopback interface in /etc/hosts
+      allowedHosts: [
+        "localhost.infotechottawa.ca",
+        "localhost.infothequeottawa.ca",
+      ],
     },
   },
 });
