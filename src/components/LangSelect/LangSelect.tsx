@@ -1,6 +1,6 @@
-import type { Lang } from "~/i18n";
+import { For } from "solid-js";
+import { langs, type Lang } from "~/i18n";
 import icons from "./icons";
-import { JSXElement, For } from "solid-js";
 
 type Props = {
   value: Lang;
@@ -8,7 +8,6 @@ type Props = {
 };
 
 export function LangSelect(props: Props) {
-  const langs: Lang[] = ["en", "fr"];
   return (
     <div class="dropdown dropdown-end">
       <div tabindex="0" role="button" class="btn btn-ghost">

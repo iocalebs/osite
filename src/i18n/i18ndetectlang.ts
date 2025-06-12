@@ -1,5 +1,5 @@
 import { getRequestEvent } from "solid-js/web";
-import type { Lang } from "./i18ntypes";
+import type { Lang } from "./dict";
 
 function getHost(): string | undefined {
   const requestEvent = getRequestEvent();

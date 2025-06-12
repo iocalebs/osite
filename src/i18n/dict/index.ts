@@ -7,3 +7,7 @@ export const dicts = {
   en,
   fr,
 };
+
+export type Lang = "en" | "fr";
+
+export const langs = ["en", "fr"] as Lang[];
