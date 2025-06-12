@@ -1,6 +1,6 @@
 import { For } from "solid-js";
 import { langs, useI18n, type Lang } from "~/i18n";
-import icons from "./icons";
+import { FleurDeLys, Trillium } from "./icons";
 
 type Props = {
   value: Lang;
@@ -8,6 +8,10 @@ type Props = {
 };
 
 export function LangSelect(props: Props) {
+  const langIcons = {
+    en: <Trillium />,
+    fr: <FleurDeLys />,
+  };
   const {
     dict: {
       root: { langCodes, langLabels },
@@ -16,7 +20,7 @@ export function LangSelect(props: Props) {
   return (
     <div class="dropdown dropdown-end">
       <div tabindex="0" role="button" class="btn btn-ghost">
-        {icons[props.value]}
+        {langIcons[props.value]}
         {langCodes[props.value]}
       </div>
       <ul
@@ -27,7 +31,7 @@ export function LangSelect(props: Props) {
           {(lang) => (
             <li>
               <a onClick={() => props.onChange(lang)}>
-                {icons[lang]}
+                {langIcons[lang]}
                 {langLabels[lang]}
               </a>
             </li>
