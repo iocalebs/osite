@@ -20,4 +20,10 @@ export default {
       <>For all business inquiries, please contact Caleb at {mailto}.</>
     ),
   },
+  services: {
+    title: "Services - Infotech Ottawa",
+    intro1: "Infotech Ottawa offers a wide range of IT-related services.",
+    intro2:
+      "While we are primarily focused on small and medium-sized businesses in the Ottawa area, we are happy to serve you wherever you are in the world.",
+  },
 };

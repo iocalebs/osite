@@ -27,4 +27,11 @@ export default {
     ),
     email: "caleb@infothequeottawa.ca",
   },
+  services: {
+    title: "Services - Infothèque d'Ottawa",
+    intro1:
+      "L'infothèque d'Ottawa offre un éventail de services liés à l'informatique.",
+    intro2:
+      " Bien que nous soyons principalement axés sur les petites et moyennes entreprises dans la région d'Ottawa-Gatineau, nous sommes heureux de vous servir où que vous soyez.",
+  },
 } satisfies typeof en;
