@@ -25,7 +25,7 @@ export default {
       "Infotech Ottawa is an IT consultancy focused on small and medium-sized businesses in the Ottawa area.",
     email: "caleb@infotechottawa.ca",
     inquiries: (mailto: JSXElement) => (
-      <>For all business inquiries, please contact Caleb at {mailto}.</>
+      <>For all business inquiries, please contact {mailto}.</>
     ),
   },
   services: {
