@@ -13,6 +13,14 @@ export default {
         services.
       </>
     ),
+    langCodes: {
+      en: "EN",
+      fr: "FR",
+    },
+    langLabels: {
+      en: "English",
+      fr: "Français",
+    },
   },
   home: {
     welcomeUnderConstruction:

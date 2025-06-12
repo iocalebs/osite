@@ -9,6 +9,14 @@ export default {
     meanwhileContact: (mailto: JSXElement) => (
       <>In the meantime, please contact {mailto} for all business inquiries.</>
     ),
+    langCodes: {
+      en: "EN",
+      fr: "FR",
+    },
+    langLabels: {
+      en: "English",
+      fr: "Français",
+    },
   },
   home: {
     welcomeUnderConstruction:
