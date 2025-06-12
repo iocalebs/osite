@@ -27,6 +27,7 @@ export function LangSelect(props: Props) {
         tabindex="0"
         class="dropdown-content menu bg-base-300 rounded-box z-1 p-2 shadow-md"
       >
+        {/* TODO: Indicate which language is currently selected */}
         <For each={langs}>
           {(lang) => (
             <li>
