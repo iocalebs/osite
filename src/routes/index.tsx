@@ -2,7 +2,9 @@ import { useI18n } from "~/i18n";
 
 export default function Home() {
   const {
-    dict: { welcomeUnderConstruction, intro, inquiries, email },
+    dict: {
+      home: { welcomeUnderConstruction, intro, inquiries, email },
+    },
   } = useI18n();
   return (
     <main class="prose p-4">

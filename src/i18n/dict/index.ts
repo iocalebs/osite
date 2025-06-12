@@ -1,8 +1,9 @@
 import en from "./en";
 import fr from "./fr";
 
-// Potential performance issue.
+// Probably not the most optimal way to load dictionaries.
+// Potential performance issue?
 export const dicts = {
-  en: en,
-  fr: fr,
+  en,
+  fr,
 };

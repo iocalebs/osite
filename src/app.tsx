@@ -21,14 +21,15 @@ export default function App() {
     }
     window.location.href = newUrl.toString();
   };
-  const { title } = dicts[lang];
+  const {
+    root: { title, unexpectedError, meanwhileContact, email },
+  } = dicts[lang];
   return (
     <Router
       root={(props) => (
         <ErrorBoundary
           fallback={(err) => {
             console.error("Error caught at root boundary:", err);
-            const { unexpectedError, email, meanwhileContact } = dicts[lang];
             return (
               <main class="prose p-4">
                 <p>{unexpectedError}</p>
