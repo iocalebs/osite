@@ -11,9 +11,8 @@ export default function Services() {
     <>
       <Title>{title}</Title>
       <main class="prose mt-0 p-4">
-        <p>{intro1}</p>
-        {/* TODO: Fix paragraph spacing */}
-        <p>{intro2}</p>
+        <p class="mb-0">{intro1}</p>
+        <p class="mt-2">{intro2}</p>
       </main>
     </>
   );
