@@ -10,7 +10,7 @@ export default function Services() {
   return (
     <>
       <Title>{title}</Title>
-      <main class="prose mt-0 p-4">
+      <main class="prose p-4">
         <p class="mb-0">{intro1}</p>
         <p class="mt-2">{intro2}</p>
       </main>
