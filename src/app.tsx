@@ -29,6 +29,9 @@ export default function App() {
       root={(props) => (
         <ErrorBoundary
           fallback={(err) => {
+            // Fallback should be as simple as possible
+            // and not refactored to separate component
+            // to minimize risk of an uncaught error
             console.error("Error caught at root boundary:", err);
             return (
               <main class="prose p-4">
