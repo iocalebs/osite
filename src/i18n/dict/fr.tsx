@@ -37,8 +37,9 @@ export default {
   },
   services: {
     title: "Services - Infothèque d'Ottawa",
+    introHeading: "Services",
     intro1:
-      "L'infothèque d'Ottawa offre un éventail de services liés à l'informatique.",
+      "L'infothèque d'Ottawa offre un éventail de services liés à l'informatique.", // TODO: tel que...
     intro2:
       " Bien que nous soyons principalement axés sur les petites et moyennes entreprises dans la région d'Ottawa-Gatineau, nous sommes heureux de vous servir où que vous soyez.",
   },

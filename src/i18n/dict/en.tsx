@@ -30,8 +30,9 @@ export default {
   },
   services: {
     title: "Services - Infotech Ottawa",
-    intro1: "Infotech Ottawa offers a wide range of IT-related services.",
+    introHeading: "Services",
+    intro1: "Infotech Ottawa offers a wide range of IT-related services.", // TODO: including...
     intro2:
-      "While we are primarily focused on small and medium-sized businesses in the Ottawa area, we are happy to serve you wherever you are in the world.",
+      "While we are primarily focused on local businesses in Ottawa, we are happy to serve you wherever you are in the world.",
   },
 };
