@@ -3,6 +3,8 @@ import { JSXElement } from "solid-js";
 export default {
   root: {
     title: "Infotech Ottawa",
+    description:
+      "Infotech Ottawa is an IT consultancy primarily serving local businesses in the Ottawa area.",
     email: "caleb@infotechottawa.ca",
     unexpectedError:
       "An unexpected error has occurred. The site administrator has been notified and will be looking into the problem shortly.",

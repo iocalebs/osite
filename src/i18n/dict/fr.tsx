@@ -4,6 +4,8 @@ import en from "./en";
 export default {
   root: {
     title: "Infothèque d'Ottawa",
+    description:
+      "L'infothèque d'Ottawa est une firme de services-conseils en informatique axée sur les petites et moyennes entreprises de la région d'Ottawa-Gatineau.",
     email: "caleb@infothequeottawa.ca",
     unexpectedError:
       "Une erreur inattendue s'est produite. L'administrateur du site a été informé. Nous nous engageons à résoudre le problème aussitôt que possible.",

@@ -22,7 +22,7 @@ export default function App() {
     window.location.href = newUrl.toString();
   };
   const {
-    root: { title, unexpectedError, meanwhileContact, email },
+    root: { title, description, unexpectedError, meanwhileContact, email },
   } = dicts[lang];
   return (
     <Router
@@ -46,6 +46,7 @@ export default function App() {
           <I18nProvider value={lang}>
             <MetaProvider>
               <Meta lang={lang} />
+              <Meta name="description" content={description} />
               <Title>{title}</Title>
               <header>
                 <nav class="navbar justify-between pr-2 pl-4 shadow-sm">
