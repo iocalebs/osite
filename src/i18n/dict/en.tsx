@@ -21,14 +21,24 @@ export default {
     },
   },
   home: {
-    welcomeUnderConstruction:
-      "Welcome! Our website is currently under construction. Please forgive our appearance as we build our space.",
-    intro:
-      "Infotech Ottawa is an IT consultancy focused on small and medium-sized businesses in the Ottawa area.",
-    email: "caleb@infotechottawa.ca",
-    inquiries: (mailto: JSXElement) => (
-      <>For all business inquiries, please contact {mailto}.</>
-    ),
+    welcome: "Welcome!",
+    serviceGreeting: " What can we help you with today?",
+    optionBizdev: "Business software",
+    optionWebdev: "Company website",
+    optionOther: "Other",
+    happyBizdev:
+      "We're happy to help you with any of the business software that you use. We can also help you choose new software to help grow your business or streamline operations.",
+    happyWebdev:
+      "We're happy to help you update your existing company website, or build a whole new one if you need.",
+    otherQuestions:
+      "Infotech Ottawa can help solve a wide range of IT-related problems. Please feel free to contact us at:",
+    forMoreInfo:
+      "For more information, you can contact us directly by phone or email:",
+    emailBizdev: "bizdev@infotechottawa.ca",
+    emailWebdev: "webdev@infotechottawa.ca",
+    emailInquiries: "info@infotechottawa.ca",
+    phoneDomestic: "(613) 777-5650",
+    phoneE164: "+16137775650",
   },
   services: {
     title: "Services - Infotech Ottawa",

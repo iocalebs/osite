@@ -25,17 +25,24 @@ export default {
     },
   },
   home: {
-    welcomeUnderConstruction:
-      "Bienvenue ! Notre site web est en construction — merci de votre patience pendant que nous le mettons en place.",
-    intro:
-      "L'infothèque d'Ottawa est une firme de services-conseils en TI axée sur les petites et moyennes entreprises de la région d'Ottawa-Gatineau.",
-    inquiries: (mailto: JSXElement) => (
-      <>
-        Pour toute demande liée à nos services, veuillez nous contacter à{" "}
-        {mailto}.
-      </>
-    ),
-    email: "caleb@infothequeottawa.ca",
+    welcome: "Bonjour !",
+    serviceGreeting: " Comment pouvons-nous vous aider aujourd'hui ?",
+    optionBizdev: "Gestion de logiciels d'entreprise",
+    optionWebdev: "Refonte d'un site web",
+    optionOther: "Autre",
+    happyBizdev:
+      "Il nous ferait plaisir de vous aider avec vos logiciels d'entreprise. Nous pouvons également vous aider à en choisir un nouveau si vous en avez besoin.",
+    happyWebdev:
+      "Il nous ferait plaisir de vous aider à créer ou refaire votre site web d'entreprise. Nous pouvons également vous aider à faire des petites mises à jour lorsque vous en avez besoin.",
+    otherQuestions:
+      "Pour toute question liée à l'informatique, sentez vous à l'aise de nous contacter directement:",
+    forMoreInfo:
+      "Pour en connaître davantage, veuillez nous contacter directement:",
+    emailBizdev: "bizdev@infothequeottawa.ca",
+    emailWebdev: "webdev@infothequeottawa.ca",
+    emailInquiries: "info@infothequeottawa.ca",
+    phoneDomestic: "(613) 777-5650",
+    phoneE164: "+16137775650",
   },
   services: {
     title: "Services - Infothèque d'Ottawa",

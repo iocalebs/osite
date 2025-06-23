@@ -1,0 +1,15 @@
+@keyframes fly-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.Option {
+  opacity: 0;
+  animation: fly-in-up 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
