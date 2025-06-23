@@ -4,7 +4,6 @@ import { createSignal, Match, Switch, Show } from "solid-js";
 
 type DialogueOption = "bizdev" | "webdev" | "other";
 
-// TODO: Handle prefers-reduced-motion
 export function IntroDialogue() {
   const {
     dict: {

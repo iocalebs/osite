@@ -1,4 +1,5 @@
 import { children, createSignal, For, Show } from "solid-js";
+import { usePrefersReducedMotion } from "~/a11y";
 import { useDialogue } from "../../context";
 import { Option } from "../Option";
 import styles from "./Options.module.css";
@@ -9,10 +10,12 @@ type Props = {
 
 export function Options(props: Props) {
   const dialogue = useDialogue();
-  const [showOptions, setShowOptions] = createSignal(false);
+  const prefersReducedMotion = usePrefersReducedMotion();
+  const [ready, setReady] = createSignal(false);
   dialogue.register(() => {
-    setShowOptions(true);
+    setReady(true);
   });
+  const showOptions = () => prefersReducedMotion() || ready();
   return (
     <Show when={showOptions()}>
       {(() => {
@@ -22,9 +25,11 @@ export function Options(props: Props) {
             <For each={options.toArray()}>
               {(option, i) => (
                 <div
-                  class={styles.Option}
+                  classList={{ [styles.Option]: !prefersReducedMotion() }}
                   style={{
-                    "animation-delay": `${i() * 120}ms`,
+                    ...(!prefersReducedMotion() && {
+                      "animation-delay": `${i() * 120}ms`,
+                    }),
                   }}
                 >
                   {option}
