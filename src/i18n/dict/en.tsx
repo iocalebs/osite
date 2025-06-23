@@ -31,7 +31,7 @@ export default {
     happyWebdev:
       "We're happy to help you update your existing company website, or build a whole new one if you need.",
     otherQuestions:
-      "Infotech Ottawa can help solve a wide range of IT-related problems. Please feel free to contact us at:",
+      "Infotech Ottawa can help solve a wide range of IT-related problems. Please feel free to contact us with any questions you may have.",
     forMoreInfo:
       "For more information, you can contact us directly by phone or email:",
     emailBizdev: "bizdev@infotechottawa.ca",
